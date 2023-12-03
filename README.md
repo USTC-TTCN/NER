@@ -1,5 +1,14 @@
 # Readme for NER
 
+This repo is for the PST2023 paper:
+
+Investigating Neural-based Function Name Reassignment from the Perspective of Binary Code Representation
+
+url: [https://doi.org/10.1109/PST58708.2023.10320193](https://doi.org/10.1109/PST58708.2023.10320193)
+
+![img](img/workflow.png)
+
+
 ## How to Create a Dataset
 
 We use BinaryNinja to create a dataset from binaries. Run the scripts in binja/ida directory in numerical order according to the prefix of the file names. 
@@ -39,18 +48,32 @@ In the directory of dataset, run the following example:
 
 **preprocess:**
 
-```
-onmt_preprocess -train_src train/src-train-pc.txt -train_tgt train/tgt-train-pc.txt -valid_src valid/src-valid-pc.txt -valid_tgt valid/tgt-valid-pc.txt -save_data processed/data-pc -src_vocab_size 4000000 -tgt_vocab_size 40000 -src_seq_length 3000 -tgt_seq_length 30 -num_threads 8
-```
+`onmt_preprocess -train_src train/src-train-pc.txt -train_tgt train/tgt-train-pc.txt -valid_src valid/src-valid-pc.txt -valid_tgt valid/tgt-valid-pc.txt -save_data processed/data-pc -src_vocab_size 4000000 -tgt_vocab_size 40000 -src_seq_length 3000 -tgt_seq_length 30 -num_threads 8`
 
 **train:**
 
-```
-onmt_train -data processed/data-pc -save_model models/model_1.2.0_BiLSTM_pc -world_size 1 -gpu_ranks 0 -train_steps 200000 -learning_rate_decay 1 -optim adam -learning_rate 0.001 -save_checkpoint_steps 20000 -batch_size 64 -valid_steps 20000 -valid_batch_size 32 -master_port 23333 -log_file models/train_1.2.0_BiLSTM_pc.log
-```
+`onmt_train -data processed/data-pc -save_model models/model_1.2.0_BiLSTM_pc -world_size 1 -gpu_ranks 0 -train_steps 200000 -learning_rate_decay 1 -optim adam -learning_rate 0.001 -save_checkpoint_steps 20000 -batch_size 64 -valid_steps 20000 -valid_batch_size 32 -master_port 23333 -log_file models/train_1.2.0_BiLSTM_pc.log`
 
 **evaluate:**
 
 `mkdir results` (only first eval)
 
 `python py_test_models.py model_1.2.0_BiLSTM_pc`
+
+
+## Citation
+
+If you find NER useful, please consider citing our paper:
+
+```plaintext
+@INPROCEEDINGS{10320193,
+  author={Chen, Guoqiang and Gao, Han and Zhang, Jie and He, Yanru and Cheng, Shaoyin and Zhang, Weiming},
+  booktitle={2023 20th Annual International Conference on Privacy, Security and Trust (PST)}, 
+  title={Investigating Neural-based Function Name Reassignment from the Perspective of Binary Code Representation}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-11},
+  doi={10.1109/PST58708.2023.10320193}}
+
+```
