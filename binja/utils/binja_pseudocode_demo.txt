@@ -1,0 +1,93 @@
+int64_t func_name(FILE* arg1)
+
+{
+    uint128_t zmm0;
+    func_name(arg1);
+    char* test_string = "hello world!";
+    int64_t rbx = 0;
+    int64_t var_2028;
+    int64_t* rbp = &var_2028;
+    int32_t r12_1;
+    while (true)
+    {
+        r12_1 = rbx;
+        uint64_t var_2038;
+        int32_t rax_2 = __isoc99_fscanf(arg1, "%lf %lf", &var_2038, rbp);
+        if ((rax_2 != 2 && rbx <= 1))
+        {
+            func_name(arg1);
+        }
+        double var_2048;
+        double var_2040;
+        uint128_t zmm0;
+        uint128_t zmm1;
+        uint128_t zmm2;
+        double zmm3;
+        uint128_t zmm4;
+        uint128_t zmm5;
+        if (rax_2 == 2)
+        {
+            uint64_t var_2050;
+            int64_t rcx_8;
+            char* rdx_5;
+            uint128_t temp0_1;
+            if (rbx > 1)
+            {
+                zmm4 = ((uint128_t)var_2038);
+                zmm5 = (zmm4 - ((long double)var_2050));
+                zmm5 = (zmm5 - ((long double)var_2048));
+                temp0_1 = __andpd_xmmxuq_memxuq(zmm5, data_418ad0);
+                if (((!(temp0_1 == ((long double)0.001) | (FCMP_UO(temp0_1, ((long double)0.001))))) && (!(temp0_1 < ((long double)0.001) | (FCMP_UO(temp0_1, ((long double)0.001)))))))
+                {
+                    rcx_8 = data_61c930;
+                    rdx_5 = "%s: uneven step size in histogra…";
+                }
+                else
+                {
+                    var_2050 = ((int64_t)zmm4);
+                }
+            }
+            if ((rbx <= 1 && r12_1 != 1))
+            {
+                var_2050 = var_2038;
+            }
+            if (((rbx <= 1 && r12_1 != 1) || (rbx > 1 && (!((!(temp0_1 == ((long double)0.001) | (FCMP_UO(temp0_1, ((long double)0.001))))) && (!(temp0_1 < ((long double)0.001) | (FCMP_UO(temp0_1, ((long double)0.001))))))))))
+            {
+                if (rbx != 0x3ff)
+                {
+                    goto label_404b27;
+                }
+                r12_1 = 0x400;
+            }
+            if ((rbx <= 1 && r12_1 == 1))
+            {
+                zmm0 = ((uint128_t)var_2038);
+                zmm2 = ((uint128_t)0x3eb0c6f7a0b5ed8d);
+                zmm1 = (zmm0 - ((long double)var_2050));
+                var_2048 = ((int64_t)zmm1);
+                if ((!(zmm2 < zmm1 | (FCMP_UO(zmm2, zmm1)))))
+                {
+                    rcx_8 = data_61c930;
+                    rdx_5 = "%s: illegal step in histogram da…";
+                }
+                else
+                {
+                    zmm3 = var_2050;
+                    var_2050 = ((int64_t)zmm0);
+                    var_2040 = zmm3;
+                label_404b27:
+                    rbx = (rbx + 1);
+                    rbp = &rbp[1];
+                    continue;
+                }
+            }
+            if (((rbx > 1 && ((!(temp0_1 == ((long double)0.001) | (FCMP_UO(temp0_1, ((long double)0.001))))) && (!(temp0_1 < ((long double)0.001) | (FCMP_UO(temp0_1, ((long double)0.001))))))) || (rbx <= 1 && r12_1 == 1)))
+            {
+                __fprintf_chk(stderr, 1, rdx_5, rcx_8);
+                exit(1);
+                /* no return */
+            }
+        }
+    }
+    zmm4 = ((uint128_t)-0x3fcfe1c48c884d2e);
+}
