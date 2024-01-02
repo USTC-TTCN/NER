@@ -60,6 +60,9 @@ In the directory of dataset, run the following example:
 
 `python py_test_models.py model_1.2.0_BiLSTM_pc`
 
+## Pipeline
+
+TODO: upload the model weight, soon...
 
 ## Citation
 
