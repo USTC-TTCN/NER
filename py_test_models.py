@@ -9,7 +9,7 @@ import pickle
 
 
 # parameters need define and you also need modify in main()
-load_summarization = False
+load_summarization = True
 summarization_path = '../summarization.txt'
 vocab_path = './processed/data-pc.vocab.pt'
 tgt_path = "./test/tgt-test-len3000.txt"
