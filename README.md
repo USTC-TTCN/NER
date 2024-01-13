@@ -47,7 +47,7 @@ Here,you will find the model weights file and the corresponding vocabulary file.
 
 ## How to train and evaluate
 
-environments:
+**environments:**
 
 We use Opennmt-py==1.2.0 to train and evaluate our model.
 
